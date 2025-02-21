@@ -1,5 +1,4 @@
 import 'package:fashion/config/index/index.dart';
-import 'package:flutter/material.dart';
 
 class CustomMasonryGridView extends StatelessWidget {
   final IndexedWidgetBuilder itemBuilder;

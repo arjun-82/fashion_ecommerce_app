@@ -1,4 +1,6 @@
 import 'package:fashion/config/index/index.dart';
+import 'package:fashion/presentation/explore/explore_screen.dart';
+import 'package:fashion/presentation/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class FashionBottomNavBar extends StatelessWidget {
@@ -56,8 +58,8 @@ class FashionBottomNavBar extends StatelessWidget {
                   text: 'Bag',
                 ),
                 GButton(
-                  icon: HugeIcons.strokeRoundedFavourite,
-                  text: 'F-Like',
+                  icon: HugeIcons.strokeRoundedUser,
+                  text: 'Here!',
                 ),
               ],
               selectedIndex: controller.currentIndex.value,
@@ -72,9 +74,9 @@ class BottomNavigationController extends GetxController {
   final RxInt currentIndex = 0.obs;
   final List<Widget> _screens = const [
     HomeScreen(),
-    HomeScreen(),
+    ExploreScreen(),
     CartScreen(),
-    HomeScreen(),
+    ProfileScreen(),
   ];
   void changeIndex(int index) {
     currentIndex.value = index;

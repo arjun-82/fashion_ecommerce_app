@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 class CustomIconButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final IconData icon;
+  final Color? iconColor;
   const CustomIconButton({
     super.key,
     this.onPressed,
     required this.icon,
+    this.iconColor,
   });
 
   @override
@@ -30,7 +32,8 @@ class CustomIconButton extends StatelessWidget {
             padding: EdgeInsets.zero,
             icon: Icon(
               icon,
-              color: isDarkMode ? MainPalette.tertiary : MainPalette.secondary,
+              color: iconColor ??
+                  (isDarkMode ? MainPalette.tertiary : MainPalette.secondary),
             )),
       ),
     );

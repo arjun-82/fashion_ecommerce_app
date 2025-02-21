@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 class AppBarHeader extends StatelessWidget implements PreferredSizeWidget {
   final double height;
-  final bool isleading;
-  final Widget? child;
+  final bool isleading, centerTitle;
+  final Widget? child, title;
   final List<Widget>? actions;
 
   const AppBarHeader({
@@ -13,6 +13,8 @@ class AppBarHeader extends StatelessWidget implements PreferredSizeWidget {
     this.isleading = true,
     this.child,
     this.actions,
+    this.centerTitle = false,
+    this.title,
   });
 
   @override
@@ -23,23 +25,27 @@ class AppBarHeader extends StatelessWidget implements PreferredSizeWidget {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return AppBar(
       automaticallyImplyLeading: isleading,
+      centerTitle: centerTitle,
+      title: title,
       leading: isleading
           ? IconButton.filled(
-              onPressed: () {},
+              onPressed: () {
+                Get.back();
+              },
               padding: PaddingChart.allSmall,
               style: ButtonStyle(
-                  elevation: const WidgetStatePropertyAll(2),
+                  elevation: const WidgetStatePropertyAll(8),
                   backgroundColor: WidgetStatePropertyAll(
                       isDarkMode ? ButtonDark.active : ButtonLight.active),
                   shape: const WidgetStatePropertyAll(CircleBorder())),
               icon: const Icon(
-                HugeIcons.strokeRoundedLocation01,
+                HugeIcons.strokeRoundedArrowLeft01,
                 weight: 10,
                 opticalSize: 14,
               ),
             )
           : Padding(
-              padding: const EdgeInsets.only(left: 10.0,top: 10),
+              padding: const EdgeInsets.only(left: 10.0, top: 10),
               child: child,
             ),
       actions: actions,

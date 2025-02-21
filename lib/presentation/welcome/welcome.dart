@@ -45,10 +45,9 @@ class WelcomeScreen extends StatelessWidget {
                     "Let's Get Started",
                   ),
                   onPressed: () {
-                    Get.to(
+                    Get.off(const FashionBottomNavBar(),
                         duration: const Duration(milliseconds: 900),
-                        transition: Transition.downToUp,
-                        const FashionBottomNavBar());
+                        transition: Transition.downToUp);
                   },
                 ),
               ),

@@ -7,11 +7,36 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar:  AppBarHeader(
+        isleading: false,
+        centerTitle: true,
+        title: const Text("Cart"),
+        actions: [CustomIconButton(
+          onPressed: (){
+             Get.to(
+                        duration: const Duration(milliseconds: 900),
+                        transition: Transition.downToUp,
+                        const LikedScreen());
+          },
+          icon: HugeIcons.strokeRoundedFavourite)],
+        child: const HeadLogo(),
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            ElevatedButton(onPressed: () {}, child: Text("cart Screen"))
+            CustomGridViewBuilder(
+                height: 120,
+                axisCount: 1,
+                itemBuilder: (context, index) => const CartCard(
+                      cartImageUrl:
+                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwlvkPPTMLziAb0mkCktRo6ctIQQfVg_fr2A&s",
+                      color: "black",
+                      size: "L",
+                      price: "1999",
+                      productName: "Suite and Pants",
+                    ),
+                itemCount: 10),
           ],
         ),
       ),

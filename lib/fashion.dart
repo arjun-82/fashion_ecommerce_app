@@ -10,7 +10,7 @@ class FashionApp extends StatelessWidget {
       title: 'fasion',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       home: const WelcomeScreen(),
     );
   }
