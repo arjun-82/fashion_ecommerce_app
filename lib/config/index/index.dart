@@ -28,6 +28,7 @@ export 'package:fashion/presentation/authentication/otp_verification_screen.dart
 export 'package:fashion/config/widgets/bottom_nav_bar.dart';
 export 'package:fashion/presentation/home/home_screen.dart';
 export 'package:fashion/presentation/product/product_details.dart';
+export 'package:fashion/presentation/cart/cart_screen.dart';
 
 // Widgets
 export 'package:fashion/config/widgets/favorite_button.dart';

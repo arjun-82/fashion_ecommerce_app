@@ -73,8 +73,7 @@ class BottomNavigationController extends GetxController {
   final List<Widget> _screens = const [
     HomeScreen(),
     HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
+    CartScreen(),
     HomeScreen(),
   ];
   void changeIndex(int index) {
